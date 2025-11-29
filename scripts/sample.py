@@ -28,9 +28,9 @@ def infer(prompt):
     pipe.enable_model_cpu_offload()
     image = pipe(
         prompt=prompt,
-        height=1024,
-        width=1024,
-        num_inference_steps=50,
+        height=512,
+        width=512,
+        num_inference_steps=20,
         guidance_scale=5.0,
         num_images_per_prompt=1,
         generator= torch.Generator(pipe.device).manual_seed(66)).images[0]
